@@ -13,7 +13,7 @@ describe "Ruby" do
 
     it "supports git gems" do
       app.file("logs/staging_task.log").tap do |log|
-        log.should match %r{Using cf .* git://github.com/cloudfoundry/cf.git}
+        log.should match %r{Using cf .* http://github.com/cloudfoundry/cf.git}
       end
     end
 
