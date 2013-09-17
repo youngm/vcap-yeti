@@ -555,6 +555,7 @@ module BVT::Harness
       app.total_instances = @manifest['instances']
       app.command = @manifest['command']
       app.buildpack = @manifest['buildpack']
+      app.env = @manifest['env'] unless @manifest['env'].nil?
 
       if app.changed?
         app.changes.each do |name, change|
@@ -580,6 +581,8 @@ module BVT::Harness
 
       app.command = @manifest['command']
       app.buildpack = @manifest['buildpack']
+        
+      app.env = @manifest['env'] unless @manifest['env'].nil?
 
       if @domain
         url = "#{@name}.#{@domain}"
